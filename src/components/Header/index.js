@@ -9,7 +9,7 @@ const Header = () => {
                 <span className="material-icons">
                     dark_mode
                 </span>
-                <p>Darck Mode</p>
+                Darck Mode
             </button>
         </header>
     );

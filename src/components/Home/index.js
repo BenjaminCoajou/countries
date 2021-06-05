@@ -1,11 +1,10 @@
 import './styles.css';
+import SearchBar from '../SearchBar';
 
 const Home = () => {
 
     return (
-        <div>
-            Home
-        </div>
+        <SearchBar />
     );
 }
 
