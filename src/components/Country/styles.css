@@ -1,0 +1,57 @@
+main {
+    margin: 3% 2% 0 2%;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 7%;
+    height: 4vh;
+    margin: 0 2%;
+    background-color: white;
+    box-shadow: 0 0 10px gray;
+    text-decoration: none;
+    color: black;
+}
+
+.card-country {
+    display: flex;
+    margin: 4% 3% 0 2%;
+    justify-content: space-between;    
+}
+
+.card-img-country {
+    width: 45%;
+}
+
+.card-body-country {
+    width: 45%;
+}
+
+.card-part {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-bottom-country {
+    display: flex;
+    align-items: baseline;
+    margin-top: 4%;
+}
+
+.card-bottom-list {
+    list-style-type: none;
+    display: flex;
+    width: 70%;
+}
+
+.card-bottom-list li {
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-shadow: 0 0 10px gray;
+    margin-left: 2%;
+    padding: 1.5%;
+}
