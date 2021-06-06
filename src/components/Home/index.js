@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 import './styles.css';
 import SearchBar from '../SearchBar';
 
-const Home = ({ countries, isLoad }) => {
+const Home = ({ countries, isLoad, handleCountryClick }) => {
     console.log('component home', isLoad)
     return (
         <main>
@@ -12,7 +14,7 @@ const Home = ({ countries, isLoad }) => {
 
                 {countries.map(country => (
 
-                    <div className="card">
+                    <Link key={country.alpha3Code} to={`/${country.alpha3Code}`} className="card" onClick={() => {handleCountryClick(country.alpha3Code)}}>
                         <div className="card-img">
                             <img src={country.flag}  alt="flag" />
                         </div>
@@ -22,7 +24,7 @@ const Home = ({ countries, isLoad }) => {
                             <p className="card-text">Region : {country.region}</p>
                             <p className="card-text">Capital : {country.capital}</p>
                         </div>
-                    </div>
+                    </Link>
 
                 ))}
 

@@ -1,8 +1,9 @@
-import {FETCH_COUNTRIES_SUCCESS} from '../actions/home';
+import {FETCH_COUNTRIES_SUCCESS, SELECT_COUNTRY} from '../actions/home';
 
 const initialState = {
     countries: [],
     isLoaded: false,
+    country: []
 };
 
 const home = (state = initialState, action = {}) => {
@@ -13,8 +14,13 @@ const home = (state = initialState, action = {}) => {
                 countries: [...action.payload],
                 isLoaded: !state.isLoaded,
             };
-            default:
-                return state;
+        case SELECT_COUNTRY: 
+            return {
+                ...state,
+                country: [state.countries.find(e => e.alpha3Code === action.payload)]
+            };
+        default:
+            return state;
     }
 };
 

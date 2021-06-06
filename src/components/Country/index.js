@@ -1,38 +1,44 @@
+import { Link } from 'react-router-dom';
 import './styles.css';
 
-const Country = () => {
+const Country = ({ country }) => {
 
     return (
         <main>
-            <a className="back" href="#">
+            <Link to='/' className="back">
                 <span className="material-icons">
                     arrow_back
             </span>
             Back
-            </a>
+            </Link>
             <div className="card-country">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/langfr-225px-Flag_of_France.svg.png" className="card-img-country" alt="..." />
+                <img src={country[0].flag} className="card-img-country" alt={country[0].name} />
                 <div className="card-body-country">
-                    <h2>Country</h2>
+                    <h2>{country[0].name}</h2>
                     <div className="card-part">
                         <div className="card-part-1">
-                            <p>Native :</p>
-                            <p>Population :</p>
-                            <p>Region :</p>
-                            <p>Sub Region :</p>
-                            <p>Capital :</p>
+                            <p>Native Name : {country[0].nativeName}</p>
+                            <p>Population : {country[0].population}</p>
+                            <p>Region : {country[0].region}</p>
+                            <p>Sub Region : {country[0].subregion}</p>
+                            <p>Capital : {country[0].capital}</p>
                         </div>
                         <div className="card-part-2">
-                            <p>Top Level Domain :</p>
-                            <p>Currencies :</p>
-                            <p>Languages :</p>
+                            <p>Top Level Domain : {country[0].topLevelDomain[0]}</p>
+                            <p>Currencies : {country[0].currencies[0].name}</p>
+                            <p>Languages : {country[0].languages.map(language => (
+                                language.name+", "
+                            ))}
+                            </p>
                         </div>
                     </div>
                     <div className="card-bottom-country">
                         <p>Border Countries :</p>
-                        <ul className="card-bottom-list">                            
-                            <li>country 1</li>
-                            <li>country 1</li>
+                        <ul className="card-bottom-list">
+                            {country[0].borders.map(border => (
+
+                                <li>{border}</li>
+                            ))}
                         </ul>
                     </div>
 

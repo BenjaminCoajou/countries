@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from '../Header';
 import Home from '../../containers/Home';
+import Country from '../../containers/Country';
 
 const App = ({ fetchCountries }) => {
 
@@ -15,6 +16,7 @@ const App = ({ fetchCountries }) => {
       <Header/>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/:country" component={Country} />
       </Switch>
       
     </div>

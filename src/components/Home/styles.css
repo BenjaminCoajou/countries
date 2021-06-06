@@ -16,6 +16,8 @@ main {
     background-color: white;
     box-shadow: 0 0 10px gray;
     margin: 0 2% 4% 2%;
+    text-decoration: none;
+    color: black;
 }
 
 .card-img {

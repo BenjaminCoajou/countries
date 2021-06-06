@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { selectCountry } from '../actions/home';
 import Home from '../components/Home';
 
 const mapStateToProps = (state) => ({
@@ -6,6 +7,10 @@ const mapStateToProps = (state) => ({
     isLoad : state.home.isLoaded,
 });
 
-const mapDispatchToprops = {};
+const mapDispatchToprops = (dispatch) => ({
+    handleCountryClick: (country) => {
+        dispatch(selectCountry(country))
+    },
+});
 
 export default connect(mapStateToProps, mapDispatchToprops)(Home);
