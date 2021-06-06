@@ -5,7 +5,7 @@ const Country = () => {
     return (
         <main>
             <a className="back" href="#">
-                <span class="material-icons">
+                <span className="material-icons">
                     arrow_back
             </span>
             Back

@@ -1,76 +1,39 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import './styles.css';
 import SearchBar from '../SearchBar';
 
-const Home = () => {
-
+const Home = ({ countries, isLoad }) => {
+    console.log('component home', isLoad)
     return (
         <main>
             <SearchBar />
             <div className="class-group">
 
-                <div className="card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/langfr-225px-Flag_of_France.svg.png" className="card-img" alt="..."/>
-                    <div className="card-body">
-                        <h2 className="card-title">Country</h2>
-                        <p className="card-text">Population :</p>
-                        <p className="card-text">Region :</p>
-                        <p className="card-text">Capital :</p>
-                    </div>
-                </div>
+                {countries.map(country => (
 
-                <div className="card">
-                    <img src="..." className="card-img" alt="..."/>
-                    <div className="card-body">
-                        <h2 className="card-title">Country</h2>
-                        <p className="card-text">Population :</p>
-                        <p className="card-text">Region :</p>
-                        <p className="card-text">Capital :</p>
+                    <div className="card">
+                        <div className="card-img">
+                            <img src={country.flag}  alt="flag" />
+                        </div>
+                        <div className="card-body">
+                            <h2 className="card-title">{country.name}</h2>
+                            <p className="card-text">Population : {country.population}</p>
+                            <p className="card-text">Region : {country.region}</p>
+                            <p className="card-text">Capital : {country.capital}</p>
+                        </div>
                     </div>
-                </div>
 
-                <div className="card">
-                    <img src="..." className="card-img" alt="..."/>
-                    <div className="card-body">
-                        <h2 className="card-title">Country</h2>
-                        <p className="card-text">Population :</p>
-                        <p className="card-text">Region :</p>
-                        <p className="card-text">Capital :</p>
-                    </div>
-                </div>
+                ))}
 
-                <div className="card">
-                    <img src="..." className="card-img" alt="..."/>
-                    <div className="card-body">
-                        <h2 className="card-title">Country</h2>
-                        <p className="card-text">Population :</p>
-                        <p className="card-text">Region :</p>
-                        <p className="card-text">Capital :</p>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/langfr-225px-Flag_of_France.svg.png" className="card-img" alt="..."/>
-                    <div className="card-body">
-                        <h2 className="card-title">Country</h2>
-                        <p className="card-text">Population :</p>
-                        <p className="card-text">Region :</p>
-                        <p className="card-text">Capital :</p>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/langfr-225px-Flag_of_France.svg.png" className="card-img" alt="..."/>
-                    <div className="card-body">
-                        <h2 className="card-title">Country</h2>
-                        <p className="card-text">Population :</p>
-                        <p className="card-text">Region :</p>
-                        <p className="card-text">Capital :</p>
-                    </div>
-                </div>
-                
             </div>
         </main>
     );
+}
+
+Home.propTypes = {
+    countries: PropTypes.array.isRequired,
+    isLoad: PropTypes.bool.isRequired,
 }
 
 export default Home;

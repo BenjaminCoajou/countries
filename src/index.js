@@ -1,14 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './assets/styles/index.css';
-import App from './components/App';
-import reportWebVitals from './reportWebVitals';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+import App from './containers/App';
+
+import store from './store';
+
+const rootComponent = (
+  
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>
+ 
 );
 
-reportWebVitals();
+const traget = document.getElementById('root');
+
+render(rootComponent, traget);
+

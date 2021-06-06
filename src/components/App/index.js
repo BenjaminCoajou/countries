@@ -1,14 +1,22 @@
+import React, {useEffect} from 'react';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from '../Header';
-import Home from '../Home';
-import Country from '../Country';
+import Home from '../../containers/Home';
 
-const App = () => {
+const App = ({ fetchCountries }) => {
+
+  useEffect(() => {
+    fetchCountries()
+  }, [fetchCountries]);
 
   return (
     <div>
       <Header/>
-      <Country/>
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+      
     </div>
   );
 }
