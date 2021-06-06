@@ -5,6 +5,7 @@ import Home from '../components/Home';
 const mapStateToProps = (state) => ({
     countries : state.home.countries,
     isLoad : state.home.isLoaded,
+    darkmode: state.header.darkmode
 });
 
 const mapDispatchToprops = (dispatch) => ({

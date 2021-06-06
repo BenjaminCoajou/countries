@@ -1,11 +1,20 @@
 import { Link } from 'react-router-dom';
 import './styles.css';
 
-const Country = ({ country }) => {
+const Country = ({ country, darkmode }) => {
+    let body = document.querySelector('body');
+    if(darkmode){
+        body.style.backgroundColor = "#202d36";
+        body.style.color = "#fff";
+    }
+    else {
+        body.style.backgroundColor = "white";
+        body.style.color = "black";       
+    }
 
     return (
         <main>
-            <Link to='/' className="back">
+            <Link to='/' className={`${darkmode ? "back-dark" : "back"}`}>
                 <span className="material-icons">
                     arrow_back
             </span>

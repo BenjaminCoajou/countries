@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
-import Header from '../Header';
+import Header from '../../containers/Header';
 import Home from '../../containers/Home';
 import Country from '../../containers/Country';
 

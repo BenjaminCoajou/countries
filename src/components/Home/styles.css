@@ -20,6 +20,16 @@ main {
     color: black;
 }
 
+.card-dark {
+    width: 20%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px gray;
+    margin: 0 2% 4% 2%;
+    text-decoration: none;
+    background-color: #2b3743;
+    color: white;
+}
+
 .card-img {
     width: 100%;
     height: 45%;

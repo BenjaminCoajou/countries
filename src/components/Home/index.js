@@ -5,8 +5,16 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 import SearchBar from '../SearchBar';
 
-const Home = ({ countries, isLoad, handleCountryClick }) => {
-    console.log('component home', isLoad)
+const Home = ({ countries, isLoad, handleCountryClick, darkmode }) => {
+    let body = document.querySelector('body');
+    if(darkmode){
+        body.style.backgroundColor = "#202d36";
+        body.style.color = "#000";
+    }
+    else {
+        body.style.backgroundColor = "lightgray";
+        body.style.color = "black";       
+    }
     return (
         <main>
             <SearchBar />
@@ -14,7 +22,7 @@ const Home = ({ countries, isLoad, handleCountryClick }) => {
 
                 {countries.map(country => (
 
-                    <Link key={country.alpha3Code} to={`/${country.alpha3Code}`} className="card" onClick={() => {handleCountryClick(country.alpha3Code)}}>
+                    <Link key={country.alpha3Code} to={`/${country.alpha3Code}`}className={`${darkmode ? "card-dark" : "card"}`} onClick={() => {handleCountryClick(country.alpha3Code)}}>
                         <div className="card-img">
                             <img src={country.flag}  alt="flag" />
                         </div>
