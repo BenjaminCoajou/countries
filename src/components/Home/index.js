@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import './styles.css';
-import SearchBar from '../SearchBar';
+import SearchBar from '../../containers/SearchBar';
 
-const Home = ({ countries, isLoad, handleCountryClick, darkmode }) => {
+const Home = ({ countries, isLoad, handleCountryClick, darkmode, search }) => {
     let body = document.querySelector('body');
     if(darkmode){
         body.style.backgroundColor = "#202d36";
@@ -20,7 +20,7 @@ const Home = ({ countries, isLoad, handleCountryClick, darkmode }) => {
             <SearchBar />
             <div className="class-group">
 
-                {countries.map(country => (
+                {search ? search.map(country => (
 
                     <Link key={country.alpha3Code} to={`/${country.alpha3Code}`}className={`${darkmode ? "card-dark" : "card"}`} onClick={() => {handleCountryClick(country.alpha3Code)}}>
                         <div className="card-img">
@@ -34,6 +34,18 @@ const Home = ({ countries, isLoad, handleCountryClick, darkmode }) => {
                         </div>
                     </Link>
 
+                )): countries.map(country => (
+                    <Link key={country.alpha3Code} to={`/${country.alpha3Code}`}className={`${darkmode ? "card-dark" : "card"}`} onClick={() => {handleCountryClick(country.alpha3Code)}}>
+                        <div className="card-img">
+                            <img src={country.flag}  alt="flag" />
+                        </div>
+                        <div className="card-body">
+                            <h2 className="card-title">{country.name}</h2>
+                            <p className="card-text">Population : {country.population}</p>
+                            <p className="card-text">Region : {country.region}</p>
+                            <p className="card-text">Capital : {country.capital}</p>
+                        </div>
+                    </Link>
                 ))}
 
             </div>

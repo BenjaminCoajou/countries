@@ -1,4 +1,5 @@
 import {FETCH_COUNTRIES_SUCCESS, SELECT_COUNTRY} from '../actions/home';
+import {SEARCH_COUNTRY_SUCCESS} from '../actions/searchBar';
 
 const initialState = {
     countries: [],
@@ -19,6 +20,11 @@ const home = (state = initialState, action = {}) => {
                 ...state,
                 country: [state.countries.find(e => e.alpha3Code === action.payload)]
             };
+        case SEARCH_COUNTRY_SUCCESS:
+            return {
+                ...state,
+                search: [...action.payload],
+            }
         default:
             return state;
     }

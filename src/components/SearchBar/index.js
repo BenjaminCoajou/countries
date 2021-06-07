@@ -1,19 +1,19 @@
 import './styles.css';
 
-const SearchBar = () => {
+const SearchBar = ({inputChange, darkmode}) => {
 
     return (
         <div className="search-bar">
-            <div className="filter">
+            <div className={`${darkmode ? "filter-dark" : "filter"}`}>
                 <span className="material-icons filter-icon">
                     search
                 </span>
             <form className="filter-form">
-                <input className="filter-input" type="search" placeholder="Search for country..." />
+                <input className="filter-input" type="search" placeholder="Search for country..." onChange={(evt) => {inputChange(evt.target.value)}} />
             </form>
             </div>
             <div className="dropdown">
-                <button className="dropdown-button"  type="button">
+                <button className={`${darkmode ? "dropdown-button-dark" : "dropdown-button"}`}  type="button">
                     Filter by Region
                     <span className="material-icons">
                         expand_more
