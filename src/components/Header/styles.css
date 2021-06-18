@@ -32,3 +32,13 @@ h1 {
     background-color: #2b3743;
     color: white;
 }
+
+
+@media (max-width: 540px){
+    .light{
+        width: 25%;
+    }
+    .dark-mode{
+        width: 25%;
+    }
+}

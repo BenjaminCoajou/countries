@@ -15,7 +15,7 @@ const Header = ({handleDarkmodeClick, darkmode}) => {
     return (
         <header className={darkmode ? "dark" : ""}>
             <h1>Where in the world ?</h1>
-            <button type="button" className={`dark-mode ${darkmode ? "dark" : ""}`} onClick={() => {handleDarkmodeClick()}}>
+            <button type="button" className={`dark-mode ${darkmode ? "dark" : "light"}`} onClick={() => {handleDarkmodeClick()}}>
                 <span className="material-icons">
                     dark_mode
                 </span>

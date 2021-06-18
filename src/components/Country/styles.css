@@ -70,3 +70,7 @@ main {
     margin-left: 2%;
     padding: 1.5%;
 }
+
+.bold {
+    font-weight: bold
+}

@@ -26,23 +26,23 @@ const Country = ({ country, darkmode }) => {
                     <h2>{country[0].name}</h2>
                     <div className="card-part">
                         <div className="card-part-1">
-                            <p>Native Name : {country[0].nativeName}</p>
-                            <p>Population : {country[0].population}</p>
-                            <p>Region : {country[0].region}</p>
-                            <p>Sub Region : {country[0].subregion}</p>
-                            <p>Capital : {country[0].capital}</p>
+                            <p><span className="bold">Native Name :</span> {country[0].nativeName}</p>
+                            <p><span className="bold">Population :</span> {country[0].population}</p>
+                            <p><span className="bold">Region :</span> {country[0].region}</p>
+                            <p><span className="bold">Sub Region :</span> {country[0].subregion}</p>
+                            <p><span className="bold">Capital :</span> {country[0].capital}</p>
                         </div>
                         <div className="card-part-2">
-                            <p>Top Level Domain : {country[0].topLevelDomain[0]}</p>
-                            <p>Currencies : {country[0].currencies[0].name}</p>
-                            <p>Languages : {country[0].languages.map(language => (
+                            <p><span className="bold">Top Level Domain :</span> {country[0].topLevelDomain[0]}</p>
+                            <p><span className="bold">Currencies :</span> {country[0].currencies[0].name}</p>
+                            <p><span className="bold">Languages :</span> {country[0].languages.map(language => (
                                 language.name+", "
                             ))}
                             </p>
                         </div>
                     </div>
                     <div className="card-bottom-country">
-                        <p>Border Countries :</p>
+                        <p className="bold">Border Countries :</p>
                         <ul className="card-bottom-list">
                             {country[0].borders.map(border => (
 
