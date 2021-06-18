@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { searchCountry } from '../actions/searchBar';
+import { searchCountry, filterCountry } from '../actions/searchBar';
 import SearchBar from '../components/SearchBar';
 
 const mapStateToProps = (state) => ({
@@ -10,6 +10,9 @@ const mapDispatchToprops = (dispatch) => ({
     inputChange: (country) => {
         dispatch(searchCountry(country))
     },
+    filterSelect:  (region) => {
+        dispatch(filterCountry(region))
+    }
 });
 
 export default connect(mapStateToProps, mapDispatchToprops)(SearchBar);

@@ -1,5 +1,5 @@
 import {FETCH_COUNTRIES_SUCCESS, SELECT_COUNTRY} from '../actions/home';
-import {SEARCH_COUNTRY_SUCCESS} from '../actions/searchBar';
+import {SEARCH_COUNTRY_SUCCESS, FILTER_COUNTRY_SUCCESS} from '../actions/searchBar';
 
 const initialState = {
     countries: [],
@@ -24,7 +24,12 @@ const home = (state = initialState, action = {}) => {
             return {
                 ...state,
                 search: [...action.payload],
-            }
+            };
+        case FILTER_COUNTRY_SUCCESS:
+            return {
+                ...state,
+                countries: action.payload,
+            };
         default:
             return state;
     }

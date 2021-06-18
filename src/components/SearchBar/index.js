@@ -1,6 +1,6 @@
 import './styles.css';
 
-const SearchBar = ({inputChange, darkmode}) => {
+const SearchBar = ({inputChange, darkmode, filterSelect}) => {
 
     return (
         <div className="search-bar">
@@ -13,7 +13,15 @@ const SearchBar = ({inputChange, darkmode}) => {
             </form>
             </div>
             <div className="dropdown">
-                <button className={`${darkmode ? "dropdown-button-dark" : "dropdown-button"}`}  type="button">
+                <select name="regions" className={`${darkmode ? "dropdown-select-dark" : "dropdown-select"}`} onChange={(evt) => {filterSelect(evt.target.value)}}>
+                    <option value="all"> Filter by Region</option>
+                    <option value="Oceania">Oceania</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Americas">Americas</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Africa">Africa</option>
+                </select>
+                {/* <button className={`${darkmode ? "dropdown-button-dark" : "dropdown-button"}`}  type="button">
                     Filter by Region
                     <span className="material-icons">
                         expand_more
@@ -21,7 +29,7 @@ const SearchBar = ({inputChange, darkmode}) => {
                 </button>
                 <ul className="dropdown-menu">
                    
-                </ul>
+                </ul> */}
             </div>
         </div>
     );

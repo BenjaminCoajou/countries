@@ -61,7 +61,7 @@
 }
 
 
-.dropdown-button-dark {
+.dropdown-select-dark {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -74,7 +74,7 @@
     color: white;
 }
 
-.dropdown-button {
+.dropdown-select {
     display: flex;
     align-items: center;
     justify-content: space-around;

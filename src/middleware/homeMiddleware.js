@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {FETCH_COUNTRIES, fetchCountriesSuccess} from '../actions/home';
-import {SEARCH_COUNTRY, searchCountrySuccess} from '../actions/searchBar';
+import {SEARCH_COUNTRY, searchCountrySuccess, FILTER_COUNTRY, filterCountrySuccess} from '../actions/searchBar';
 
 const homeMiddleware = (store) => (next) => (action) => {
     switch(action.type) {
@@ -20,9 +20,22 @@ const homeMiddleware = (store) => (next) => (action) => {
             axios.get("https://restcountries.eu/rest/v2/name/"+action.payload)
             .then((response) => {
                 store.dispatch(searchCountrySuccess(response.data))
-                console.log('search ok')
             });
             break;
+            case FILTER_COUNTRY:
+                if(action.payload === "all") {
+                    axios.get("https://restcountries.eu/rest/v2/all")
+                    .then((response) => {
+                        store.dispatch(fetchCountriesSuccess(response.data)) 
+                    });                  
+                }
+                else {
+                    axios.get("https://restcountries.eu/rest/v2/region/"+action.payload)
+                    .then((response) => {
+                        store.dispatch(filterCountrySuccess(response.data))
+                    });
+                }
+                break;
         default:
             return next(action);
     }
