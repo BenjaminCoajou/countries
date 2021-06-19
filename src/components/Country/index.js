@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './styles.css';
 
-const Country = ({ country, darkmode }) => {
+const Country = ({ country, darkmode, borderName }) => {
     let body = document.querySelector('body');
     if(darkmode){
         body.style.backgroundColor = "#202d36";
@@ -44,9 +44,9 @@ const Country = ({ country, darkmode }) => {
                     <div className="card-bottom-country">
                         <p className="bold">Border Countries :</p>
                         <ul className="card-bottom-list">
-                            {country[0].borders.map(border => (
+                            {borderName.map(border => (
 
-                                <li>{border}</li>
+                                <li key={border}>{border}</li>
                             ))}
                         </ul>
                     </div>

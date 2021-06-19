@@ -4,7 +4,8 @@ import {SEARCH_COUNTRY_SUCCESS, FILTER_COUNTRY_SUCCESS} from '../actions/searchB
 const initialState = {
     countries: [],
     isLoaded: false,
-    country: []
+    country: [],
+    bo: []
 };
 
 const home = (state = initialState, action = {}) => {
@@ -34,5 +35,13 @@ const home = (state = initialState, action = {}) => {
             return state;
     }
 };
+export const getBorder = (state) => {
+    let bo = [];
+    state.home.country[0].borders.forEach(border => {
+         bo.push(state.home.countries.find(name => name.alpha3Code === border))
+        })
+        return bo.map(n => (n.name))
+    }
 
+        
 export default home;
