@@ -37,11 +37,14 @@ const home = (state = initialState, action = {}) => {
 };
 export const getBorder = (state) => {
     let bo = [];
-    state.home.country[0].borders.forEach(border => {
-         bo.push(state.home.countries.find(name => name.alpha3Code === border))
+    if(state.home.country[0].borders){
+
+        state.home.country[0].borders.forEach(border => {
+            bo.push(state.home.countries.find(name => name.alpha3Code === border))
         })
         return bo.map(n => (n.name))
     }
+}
 
         
 export default home;
