@@ -20,6 +20,7 @@ const Country = ({ country, darkmode, borderName }) => {
             </span>
             Back
             </Link>
+            {country ? 
             <div className="card-country">
                 <img src={country[0].flag} className="card-img-country" alt={country[0].name} />
                 <div className="card-body-country">
@@ -53,6 +54,7 @@ const Country = ({ country, darkmode, borderName }) => {
 
                 </div>
             </div>
+            : ""}
         </main>
     );
 }
