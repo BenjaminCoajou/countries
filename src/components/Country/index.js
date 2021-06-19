@@ -44,7 +44,7 @@ const Country = ({ country, darkmode, borderName }) => {
                     <div className="card-bottom-country">
                         <p className="bold">Border Countries :</p>
                         <ul className="card-bottom-list">
-                            {borderName.map(border => (
+                            {country[0].borders.map(border => (
 
                                 <li key={border}>{border}</li>
                             ))}

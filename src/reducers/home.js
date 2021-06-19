@@ -35,7 +35,7 @@ const home = (state = initialState, action = {}) => {
             return state;
     }
 };
-export const getBorder = (state) => {
+/*export const getBorder = (state) => {
     let bo = [];
     if(state.home.country[0].borders){
 
@@ -44,7 +44,7 @@ export const getBorder = (state) => {
         })
         return bo.map(n => (n.name))
     }
-}
+}*/
 
         
 export default home;

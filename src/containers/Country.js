@@ -6,7 +6,7 @@ const mapStateToProps = (state) => ({
     country: state.home.country,
     isLoad : state.home.isLoaded,
     darkmode: state.header.darkmode,
-    borderName: getBorder(state)
+    /*borderName: getBorder(state)*/
 });
 
 const mapDispatchToprops = {};
