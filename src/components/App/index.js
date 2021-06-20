@@ -15,8 +15,8 @@ const App = ({ fetchCountries }) => {
     <div>
       <Header/>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/:country" component={Country} />
+        <Route exact path="/countries/" component={Home} />
+        <Route exact path="/countries/:country" component={Country} />
       </Switch>
       
     </div>

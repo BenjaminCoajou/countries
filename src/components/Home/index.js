@@ -22,7 +22,7 @@ const Home = ({ countries, isLoad, handleCountryClick, darkmode, search }) => {
 
                 {search ? search.map(country => (
 
-                    <Link key={country.alpha3Code} to={`/${country.alpha3Code}`}className={`${darkmode ? "card-dark" : "card"}`} onClick={() => {handleCountryClick(country.alpha3Code)}}>
+                    <Link key={country.alpha3Code} to={`/countries/${country.alpha3Code}`}className={`${darkmode ? "card-dark" : "card"}`} onClick={() => {handleCountryClick(country.alpha3Code)}}>
                         <div className="card-img">
                             <img src={country.flag}  alt="flag" />
                         </div>
@@ -35,7 +35,7 @@ const Home = ({ countries, isLoad, handleCountryClick, darkmode, search }) => {
                     </Link>
 
                 )): countries.map(country => (
-                    <Link key={country.alpha3Code} to={`/${country.alpha3Code}`}className={`${darkmode ? "card-dark" : "card"}`} onClick={() => {handleCountryClick(country.alpha3Code)}}>
+                    <Link key={country.alpha3Code} to={`/countries/${country.alpha3Code}`}className={`${darkmode ? "card-dark" : "card"}`} onClick={() => {handleCountryClick(country.alpha3Code)}}>
                         <div className="card-img">
                             <img src={country.flag}  alt="flag" />
                         </div>

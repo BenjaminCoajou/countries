@@ -9,8 +9,6 @@ const homeMiddleware = (store) => (next) => (action) => {
             axios.get("https://restcountries.eu/rest/v2/all")
             .then((response) => {
                 store.dispatch(fetchCountriesSuccess(response.data))
-                console.log('api ok', response.data)
-                console.log('state', store.getState())
             })
             .catch((error) => {
                 console.log('erreur api', error)

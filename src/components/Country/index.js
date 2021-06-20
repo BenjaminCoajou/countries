@@ -14,12 +14,13 @@ const Country = ({ country, darkmode, borderName }) => {
 
     return (
         <main>
-            <Link to='/' className={`${darkmode ? "back-dark" : "back"}`}>
+            <Link to='/countries/' className={`${darkmode ? "back-dark" : "back"}`}>
                 <span className="material-icons">
                     arrow_back
             </span>
             Back
             </Link>
+            {country[0] !== undefined ?
             <div className="card-country">
                 <img src={country[0].flag} className="card-img-country" alt={country[0].name} />
                 <div className="card-body-country">
@@ -52,7 +53,7 @@ const Country = ({ country, darkmode, borderName }) => {
                     </div>
 
                 </div>
-            </div>
+            </div> :""}
         </main>
     );
 }
