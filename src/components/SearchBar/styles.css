@@ -41,11 +41,16 @@
     border: none;
 }
 
+.filter-input:focus{
+    outline: none;
+}
+
 .filter-dark input {
     height: 100%;
     width: 100%;
     border: none;
     background-color: #2b3743;
+    color: white;
 }
 
 .filter-dark input::placeholder {
